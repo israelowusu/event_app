@@ -8,8 +8,6 @@ curl -X POST http://localhost:8080/api/v1/auth/register \
 }' \
 -w "\nHTTP Status: %{http_code}\n"
 
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHByIjoxNzU3MDkyOTk1LCJ1c2VySWQiOjF9.OzBhc-eXMAWpfViuETq3sc2pPKoadvGPKdv-XfwLWzw
-
 # Login
 curl -X POST http://localhost:8080/api/v1/auth/login \
 -H "Content-Type: application/json" \
@@ -22,7 +20,7 @@ curl -X POST http://localhost:8080/api/v1/auth/login \
 # Create a new event
 curl -X POST http://localhost:8080/api/v1/events \
 -H "Content-Type: application/json" \
--H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHByIjoxNzU3MDkyOTk1LCJ1c2VySWQiOjF9.OzBhc-eXMAWpfViuETq3sc2pPKoadvGPKdv-XfwLWzw" \
+-H "Authorization: Bearer " \
 -d '{
     "ownerId": 1,
     "name": "Board meeting",
