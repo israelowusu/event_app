@@ -1,4 +1,4 @@
-# event_app
+# Event Management App
 
 A Go-based application for managing events.
 
