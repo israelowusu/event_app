@@ -108,7 +108,7 @@ func (m *AttendeeModel) GetEventsByAttendee(attendeeId int) ([]*Event, error) {
 	var events []*Event
 	for rows.Next() {
 		var event Event
-		err := rows.Scan(&event.ID, &event.OwnerId, &event.Name, &event.Description, &event.Date, &event.Location)
+		err := rows.Scan(&event.Id, &event.OwnerId, &event.Name, &event.Description, &event.Date, &event.Location)
 		if err != nil {
 			return nil, err
 		}

@@ -135,7 +135,7 @@ func (app *application) updateEvent(c *gin.Context) {
 		return
 	}
 
-	updatedEvent.ID = id
+	updatedEvent.Id = id
 
 	if err := app.models.Events.Update(updatedEvent); err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to update event"})
@@ -263,7 +263,7 @@ func (app *application) addAttendeeToEvent(c *gin.Context) {
 		return
 	}
 
-	existingAttendee, err := app.models.Attendees.GetByEventAndAttendee(event.ID, userToAdd.Id)
+	existingAttendee, err := app.models.Attendees.GetByEventAndAttendee(event.Id, userToAdd.Id)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Failed to retreive attendee"})
 		return
@@ -274,7 +274,7 @@ func (app *application) addAttendeeToEvent(c *gin.Context) {
 	}
 
 	attendee := database.Attendee{
-		EventId: event.ID,
+		EventId: event.Id,
 		UserId:  userToAdd.Id,
 	}
 
